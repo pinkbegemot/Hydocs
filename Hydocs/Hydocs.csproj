@@ -334,6 +334,7 @@
     <Content Include="Areas\AdWorks\Views\Customersmv\Details.cshtml" />
     <Content Include="Areas\AdWorks\Views\Customersmv\Edit.cshtml" />
     <Content Include="ReactMVC.csproj" />
+    <Content Include="ReleaseNotes.css" />
     <Content Include="Scripts\react\react-dom-server.js" />
     <Content Include="Scripts\react\react-dom-server.min.js" />
     <Content Include="Scripts\react\react-dom.js" />

@@ -208,6 +208,7 @@
     <Content Include="React\polyfills.js" />
     <Content Include="React\style.css" />
     <Content Include="readme.txt" />
+    <Content Include="ReleaseNotes.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
