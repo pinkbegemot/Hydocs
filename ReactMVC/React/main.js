@@ -23,7 +23,7 @@ function setState(changes) {
       onNewContactChange: updateNewContact,
       onNewContactSubmit: submitNewContact,
     })),
-    document.getElementById('react-app')
+    document.getElementById('contacts')
   );
  
 }

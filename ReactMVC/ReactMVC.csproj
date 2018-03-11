@@ -199,11 +199,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="React\App.js" />
     <Content Include="React\ContactForm.js" />
     <Content Include="React\ContactItem.js" />
     <Content Include="React\ContactsView.js" />
     <Content Include="React\Feed.js" />
     <Content Include="React\FeedItem.js" />
+    <Content Include="React\index.js" />
     <Content Include="React\main.js" />
     <Content Include="React\polyfills.js" />
     <Content Include="React\style.css" />
