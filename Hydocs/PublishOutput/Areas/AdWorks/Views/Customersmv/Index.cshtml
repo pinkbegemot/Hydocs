@@ -1,0 +1,183 @@
+﻿
+@model IEnumerable<Hydocs.Areas.AdWorks.Models.DB.Customer>
+@{
+    Layout = "~/_Layout.cshtml";
+}
+
+<h3>Adwenture Works Customers: MVC 5 with React JSX demo</h3>
+<div class="imagdiv1">
+    <div class="row">
+        <div id="search" class="col-sm-3"> <img src="~/Content/loading.gif"/></div>
+
+        <div class="col-sm-9">
+
+            <div id="table-wrapper">
+                <p></p>
+                <p></p>
+                <div class="table-scroll">
+                    <table style="max-height: 400px;	max-width: 500px;overflow: scroll;font-size: x-small">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FirstName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LastName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.BirthDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaritalStatus)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Gender)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EmailAddress)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.YearlyIncome)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TotalChildren)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.EnglishEducation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SpanishEducation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FrenchEducation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EnglishOccupation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SpanishOccupation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FrenchOccupation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.HouseOwnerFlag)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NumberCarsOwned)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AddressLine1)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AddressLine2)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Phone)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateFirstPurchase)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CommuteDistance)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FirstName)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastName)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BirthDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaritalStatus)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Gender)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EmailAddress)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.YearlyIncome)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TotalChildren)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EnglishEducation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SpanishEducation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FrenchEducation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EnglishOccupation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SpanishOccupation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FrenchOccupation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.HouseOwnerFlag)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NumberCarsOwned)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AddressLine1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AddressLine2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Phone)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateFirstPurchase)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CommuteDistance)
+                                </td>
+                                <td>
+                                    <p>
+                                        @Html.ActionLink("Create New", "Create")
+
+                                    </p>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.CustomerKey }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.CustomerKey }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.CustomerKey })
+                                </td>
+                            </tr>
+                    }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+<script src="~/Areas/AdWorks/SearchContainer.jsx"></script>
+<script>
+    //var tableData = $.getJSON('http://localhost/hydocs/api/Customers');
+ 
+    ReactDOM.render(React.createElement(SearchContainer, {url: '/hydocs/api/Customers'}), document.getElementById('search'));
+
+</script>
+

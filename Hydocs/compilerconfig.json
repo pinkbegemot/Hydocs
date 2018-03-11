@@ -1,0 +1,62 @@
+﻿[
+  {
+    "outputFile": "Areas/AdWorks/DisplayTable.js",
+    "inputFile": "Areas/AdWorks/DisplayTable.jsx"
+  },
+  {
+    "outputFile": "Areas/AdWorks/SearchBox.js",
+    "inputFile": "Areas/AdWorks/SearchBox.jsx"
+  },
+  {
+    "outputFile": "../../SearchContainer.js",
+    "inputFile": "../../SearchContainer.jsx"
+  },
+  {
+    "outputFile": "../../SearchContainer.js",
+    "inputFile": "../../SearchContainer.jsx"
+  },
+  {
+    "outputFile": "../../SearchContainer.js",
+    "inputFile": "../../SearchContainer.jsx"
+  },
+  {
+    "outputFile": "Areas/AdWorks/Tutorial.js",
+    "inputFile": "Areas/AdWorks/Tutorial.jsx"
+  },
+  {
+    "outputFile": "../../SearchContainer.js",
+    "inputFile": "../../SearchContainer.jsx"
+  },
+  {
+    "outputFile": "../../SearchContainer.js",
+    "inputFile": "../../SearchContainer.jsx"
+  },
+  {
+    "outputFile": "../../SearchContainer.js",
+    "inputFile": "../../SearchContainer.jsx"
+  },
+  {
+    "outputFile": "../../SearchContainer.js",
+    "inputFile": "../../SearchContainer.jsx"
+  },
+  {
+    "outputFile": "../../SearchContainer.js",
+    "inputFile": "../../SearchContainer.jsx"
+  },
+  {
+    "outputFile": "../../SearchContainer.js",
+    "inputFile": "../../SearchContainer.jsx"
+  },
+  {
+    "outputFile": "Areas/AdWorks/SearchContainer.es5.js",
+    "inputFile": "Areas/AdWorks/SearchContainer.js"
+  },
+  {
+    "outputFile": "Areas/AdWorks/SearchContainer.js",
+    "inputFile": "Areas/AdWorks/SearchContainer.jsx"
+  },
+  {
+    "outputFile": "Scripts/search/CustomersSelect.js",
+    "inputFile": "Scripts/search/CustomersSelect.jsx"
+  }
+]

@@ -1,0 +1,2 @@
+"Data Source=SQL5016.Smarterasp.net;Initial Catalog=DB_9C43A2_AdventureWorks;User Id=DB_9C43A2_AdventureWorks_admin;Password=77Begemots;"
+

@@ -1,0 +1,50 @@
+﻿@using System.Web.Optimization
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/bootstrap.css")
+    @Styles.Render("~/Content/site.css")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+
+  
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" runat="server" href="/">
+                    <img style="position:fixed" src="/images/2shLogo.gif" />&nbsp;2sharp
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a runat="server" href="~/default">HYDOCS</a></li>
+                    <li><a runat="server" href="~/wfdemo">WEB FORMS</a></li>
+                    <li><a runat="server" href="~/adworks/Customersmv">MVC 5</a></li>
+                    <li><a runat="server" href="~/swaggerdemo">SWAGGER</a></li>
+                    <li><a runat="server" href="~/help">WEB API</a></li>
+                    <li><a runat="server" href="~/react">REACT</a></li>
+                    <li><a runat="server" href="~/about">MVC 6</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -an MVC /React  demo. 2sharp</p>
+        </footer>
+    </div>
+</body>
+

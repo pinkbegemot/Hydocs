@@ -1,0 +1,48 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="Hydocs.Site_Mobile" %>
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form id="form1" runat="server">
+             <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                         <a class="navbar-brand" runat="server" href="/">
+                    <img  style="position:fixed"src="/images/2shLogo.gif"/>&nbsp;2sharp</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/default">HYDOCS</a></li>
+                          <li><a runat="server" href="~/wfdemo">WEB FORMS</a></li>
+                          <li><a runat="server" href="~/adworks/customersmv">MVC 5</a></li>
+                          <li><a runat="server" href="~/help">WEB API</a></li>
+                        <li><a runat="server" href="~/swaggerdemo">SWAGGER</a></li>
+                             <li><a runat="server" href="/react">REACT</a></li>
+                          <li><a runat="server" href="~/about">MVC 6</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <div>
+        <h1>Hydocs, Mobile Page</h1>
+         <friendlyUrls:ViewSwitcher runat="server" />
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </section>
+     
+    </div>
+    </form>
+</body>
+</html>

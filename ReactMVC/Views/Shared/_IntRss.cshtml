@@ -1,0 +1,9 @@
+﻿<h3>International news</h3>
+
+@foreach (var item in ViewBag.IntRss)
+{
+    <div class="feed">
+        <p><b>@item.Title</b></p>
+        <p>@Convert.ToDateTime(item.PubDate) <a href="@item.Link" target="_blank">><b>>></b> </a> </p>
+    </div>
+}

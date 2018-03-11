@@ -1,0 +1,52 @@
+﻿@using System.Web.Optimization
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <link href="/css/piro-box.css" rel="stylesheet" media="screen">
+    <!-- React & jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+     <script>window.jQuery || document.write('<script src="js/jquery-1.8.3.min.js"><\/script>')</script> <!-- jQuery Local if CDN failed -->
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" runat="server" href="/">
+                    <img style="position:fixed" src="/images/2shLogo.gif" />&nbsp;2SHARP
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a runat="server" href="~/default">HYDOCS</a></li>
+                    <li><a runat="server" href="~/wfdemo">WEB FORMS</a></li>
+                    <li><a runat="server" href="~/adworks/Customersmv">MVC 5</a></li>
+                    <li><a runat="server" href="~/swaggerdemo">SWAGGER</a></li>
+                    <li><a runat="server" href="~/help">WEB API</a></li>
+                    <li><a runat="server" href="/react">REACT</a></li>
+                    <li><a runat="server" href="~/about">MVC 6</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -an MVC /React  demo. 2sharp  <img src="/images/Pinch.gif" /></p>
+        </footer>
+    </div>
+</body>
+
