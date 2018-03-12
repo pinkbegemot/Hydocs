@@ -9,7 +9,7 @@ class FeedItem extends PureComponent {
 
     constructor(props) {
         super(props);
-        this.state = { title: "" };
+        this.state = { title: "", link:"", publishedDate:"" };
     }
 
     //    <div class="container">
@@ -34,13 +34,10 @@ class FeedItem extends PureComponent {
 //</div>
 
     render() {
-        let title = this.props.title == 'Undefined' ? "" : this.props.shape
-        let type = this.props.type == 'Undefined' ? "n/a" : this.props.type
-        let status = this.props.status == 'Undefined' ? "n/a" : this.props.status
-        let kw = this.props.kw == 'Undefined' ? "n/a" : this.props.kW
-        let price = this.props.pricing == 'null' ? "n/a" : this.props.pricing
-        let number = this.props.number;
-        //console.log("Connector, status: " + this.props.status)
+        let title = this.props.title == 'Undefined' ? "" : this.props.title
+        let link = this.props.link == 'Undefined' ? "" : this.props.link
+        let date = this.props.publishedDate == 'Undefined' ? "n/a" : this.props.publishedDate
+
         return (
             title.length > 0 ?
                  <div className="row">

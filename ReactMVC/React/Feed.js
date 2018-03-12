@@ -20,21 +20,36 @@ const parser = Reader.parse;
 class Feed extends PureComponent {
     constructor(props) {
         super(props);
-        this.state = this.props;
+        this.state = { items: null };
+        fetchFeed(this.props.url);
     }
 
     static PropTypes = {
-        match: PropTypes.object.isRequired,
         layout: PropTypes.object,
-        url: PropTypes.string,
+        url: PropTypes.string.isRequired,
+        items: PropTypes.object
      };
+
+    fetchFeed = (url) => {
+        parser(url).then((feed) => {
+            console.log(feed);
+            setState(items=feed);
+        }).catch((err) => {
+            console.log(err);
+            alert("err");
+        }).finally(() => {
+            console.log('Everything done');
+        });
+    }
 
     handleOnClick = event => {
         this.state.url = this.props.url;
         //this.props.history.push({ pathname: "/chargepoint" });
     };
+
+    fetchFeed=()=>
     render() {
-        var url = this.props.url;
+        //var url = this.props.url;
         var feeds = this.props.items;
        console.log("feeds " + this.props.items);
         return (
@@ -45,27 +60,20 @@ class Feed extends PureComponent {
                     </div>
                     <div class="col-sm-6 other2">
                         <div>
-                            {this.props.location.pathname == "/nearby" && (
-                                <Button
-                                    type="submit"
+                           <Button  type="submit"
                                     className="btn-inverse gdark"
                                     onClick={this.handleOnClick}
                                 >
                                     <h2 class="animated wobble">Get RSS</h2>
                                 </Button>
-                            )}
-
-                            {this.props.feeds &&
-                                Object.keys(this.props.feeds).map((k, index) => (
+                            {this.props.items &&
+                                Object.keys(this.props.items).map((k, index) => (
                                     <FeedItem
-                                        type={feeds[k].connectorPowerType}
-                                        status={connectors[k].connectorStatus}
-                                        shape={connectors[k].connectorShape}
-                                        number={connectors[k].connectorId}
-                                    />
+                                        title={items[k].title}
+                                        link={connectors[k].link}
+                                        date={connectors[k].publishedDate}
+                                   />
                                 ))}
-
-                          
                         </div>
                     </div>
                 </div>

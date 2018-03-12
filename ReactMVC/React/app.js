@@ -1,13 +1,12 @@
 ﻿import React, { Component } from 'react';
 import ContactsView from './ContactsView';
 var CONTACT_TEMPLATE = { name: "", email: "", description: "", errors: null };
-var url=
+var url = "https://www.rt.com/rss/";
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            contacts: [
+        this.state = {contacts: [
                 { key: 1, name: " Martin Fowler", email: "martin@fowler.com", description: "Old friend" },
             ],
             newContact: CONTACT_TEMPLATE}
@@ -22,13 +21,13 @@ class App extends Component {
     render() {
         return (
 
-            <div id="appContainer" class=".container-fluid">
-                <header id="header" class="container">
+            <div id="appContainer" className=".container-fluid">
+                <header id="header" className="container">
                 </header>
                 <div className=".container-fluid">
                     <ContactsView onNewContactChange={this.updateNewContact}
                         onNewContactSubmit={this.submitNewContact} />
-                    <Feeds url=
+                    <Feeds url={url}/>
                 </div>
           
             </div>
