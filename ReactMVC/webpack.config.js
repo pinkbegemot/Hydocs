@@ -1,7 +1,7 @@
 ﻿"use strict";
 
 module.exports = {
-    entry: "./index.js",
+    entry: "./Hydocs/ReactMVC/React/index.js",
     output: {
         filename: "bundle.js"
     },

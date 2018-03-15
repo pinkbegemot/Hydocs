@@ -15,7 +15,7 @@ namespace ReactMVC.Controllers
             try
             {
                 ViewBag.Title = "News International";
-                ViewBag.RssFeed = Models.RssReader.GetRssFeeds("https://www.rt.com/rss/", 65001);
+                //ViewBag.RssFeed = Models.RssReader.GetRssFeeds("https://www.rt.com/rss/", 65001);
                 //ViewBag.RssFeed = Models.RssReader.GetRssFeeds("http://www.fontanka.ru/fontanka.rss", 1251);
 
             }
@@ -27,7 +27,7 @@ namespace ReactMVC.Controllers
         public ActionResult _IntRss()
         {
             try {
-                ViewBag.IntRss = Models.RssReader.GetRssFeeds(" http://feeds.bbci.co.uk/news/rss.xml?edition=int", 65001);
+                //ViewBag.IntRss = Models.RssReader.GetRssFeeds(" http://feeds.bbci.co.uk/news/rss.xml?edition=int", 65001);
                 //ViewBag.IntRss = Models.RssReader.GetRssFeeds("https://www.rt.com/rss/", 65001);
             }
             catch { ViewBag.Title = "Error"; ViewBag.IntRss = "RSS from the specified URL is not available. Sorry about that :-("; }

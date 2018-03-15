@@ -191,6 +191,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\webpack.config.js">
+      <Link>webpack.config.js</Link>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -200,6 +203,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="React\App.js" />
+    <Content Include="React\bundle.js" />
     <Content Include="React\ContactForm.js" />
     <Content Include="React\ContactItem.js" />
     <Content Include="React\ContactsView.js" />
@@ -216,8 +220,9 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="package.json" />
-    <Content Include="webpack.config.js" />
+    <Content Include="..\..\package.json">
+      <Link>package.json</Link>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

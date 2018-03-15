@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
 import ContactsView from './ContactsView';
+import Feeds from './Feed';
 var CONTACT_TEMPLATE = { name: "", email: "", description: "", errors: null };
 var url = "https://www.rt.com/rss/";
 
@@ -39,12 +40,12 @@ class App extends Component {
  */
 
 
-updateNewContact=(contact)=> {
+updateNewContact = (contact) => {
     setState({ newContact: contact });
 }
 
 
-submitNewContact=()=> {
+submitNewContact = () => {
     var contact = Object.assign({}, state.newContact, { key: state.contacts.length + 1, errors: {} });
 
     if (!contact.name) {

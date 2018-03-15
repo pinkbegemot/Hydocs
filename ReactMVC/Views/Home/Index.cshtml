@@ -6,22 +6,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="content">
         <div class="blank"></div>
         <div class="row">
             <div id="react-app" class="col-sm-4"></div>
-            <div id="rss-feeds" class="col-sm-4">@Html.Action("_IntRss")</div>
+            <div id="rss-feeds" class="col-sm-4"></div>
             <div class="col-sm-4">
                 <h3>Even more news</h3>
 
-                @foreach (var item in ViewBag.RssFeed)
-            {
-                    <div class="feed">
-                        <p><b>@item.Title</b></p>
-                        <p>@Convert.ToDateTime(item.PubDate) <a href="@item.Link" class="magenta" target="_blank">><b>>></b> </a> </p>
-                    </div>
-                }
-            </div>
+          
             <div class="clearfix"></div>
       
         </div>
