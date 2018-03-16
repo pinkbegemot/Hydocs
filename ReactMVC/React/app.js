@@ -1,10 +1,11 @@
 ﻿import React, { Component } from 'react';
-import ContactsView from './ContactsView';
-import Feeds from './Feed';
+//import ContactsView from './ContactsView';
+import Feed from './Feed';
 var CONTACT_TEMPLATE = { name: "", email: "", description: "", errors: null };
-var url = "https://www.rt.com/rss/";
+//var url = "https://www.rt.com/rss/";
+var url = "http://www.fontanka.ru/fontanka.rss"
 
-class App extends Component {
+export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {contacts: [
@@ -26,9 +27,8 @@ class App extends Component {
                 <header id="header" className="container">
                 </header>
                 <div className=".container-fluid">
-                    <ContactsView onNewContactChange={this.updateNewContact}
-                        onNewContactSubmit={this.submitNewContact} />
-                    <Feeds url={url}/>
+                 
+                    <Feed url={url}/>
                 </div>
           
             </div>
@@ -80,4 +80,3 @@ Display=(el)=>{
     
 }
 
-export default App;

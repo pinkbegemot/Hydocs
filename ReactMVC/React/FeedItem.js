@@ -1,11 +1,9 @@
-﻿// @flow weak
-
-import React, {PureComponent} from 'react';
+﻿import React, { Component } from 'react';
 //import GreyLayout from '../../layouts/GreyLayout.jsx';
 //import { Button } from 'react-bootstrap';
 //import 'react-table/react-table.css';
 
-class FeedItem extends PureComponent {
+class FeedItem extends Component {
 
     constructor(props) {
         super(props);

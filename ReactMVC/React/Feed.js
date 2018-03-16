@@ -1,29 +1,19 @@
-﻿
-
-//let url = 'https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&q=nodejs&output=rss';
-
-//parse(url).then((feed) => {
-//    console.log(feed);
-//}).catch((err) => {
-//    console.log(err);
-//}).finally(() => {
-//    console.log('Everything done');
-//});
-
-import React, { Component } from "react";
+﻿import React, { Component } from "react";
 import { Button } from "react-bootstrap";
-import Reader from "feed-reader";
+import Parser from "feedparser-promised";
 import PropTypes from "prop-types";
-import FeedItem from "./FeedItem.js";
-const parser = Reader.parse;
+import FeedItem from "./FeedItem";
 
-class Feed extends PureComponent {
+
+
+
+class Feed extends Component {
     constructor(props) {
         super(props);
         this.state = { items: null };
-        fetchFeed(this.props.url);
+        this.fetchFeed(this.props.url);
     }
-
+ 
     static PropTypes = {
         layout: PropTypes.object,
         url: PropTypes.string.isRequired,
@@ -31,12 +21,26 @@ class Feed extends PureComponent {
      };
 
     fetchFeed = (url) => {
-        parser(url).then((feed) => {
+        const httpOptions = {
+            uri: url,
+            timeout: 5000,
+            gzip: false,
+            //headers: {
+            //    'Access-Control-Allow-Headers':'Content-Type',
+            //'Access-Control-Allow-Origin': 'http://localhost/*',
+            //    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,HEAD',
+                //'Content-Type': 'application/x-rss+xml'
+            //}
+
+
+        };
+        
+       Parser.parse(httpOptions).then((feed) => {
             console.log(feed);
             setState(items=feed);
         }).catch((err) => {
             console.log(err);
-            alert("err");
+            alert("Parsing error");
         }).finally(() => {
             console.log('Everything done');
         });
@@ -47,9 +51,9 @@ class Feed extends PureComponent {
         //this.props.history.push({ pathname: "/chargepoint" });
     };
 
-    fetchFeed=()=>
+ 
     render() {
-        //var url = this.props.url;
+   
         var feeds = this.props.items;
        console.log("feeds " + this.props.items);
         return (
