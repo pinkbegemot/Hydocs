@@ -1,6 +1,5 @@
 ﻿import React, { Component } from "react";
 import { Button } from "react-bootstrap";
-import Parser from "feedparser-promised";
 import PropTypes from "prop-types";
 import FeedItem from "./FeedItem";
 
@@ -21,29 +20,34 @@ class Feed extends Component {
      };
 
     fetchFeed = (url) => {
-        const httpOptions = {
-            uri: url,
-            timeout: 5000,
-            gzip: false,
-            //headers: {
-            //    'Access-Control-Allow-Headers':'Content-Type',
-            //'Access-Control-Allow-Origin': 'http://localhost/*',
-            //    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,HEAD',
-                //'Content-Type': 'application/x-rss+xml'
-            //}
+        //const httpOptions = {
+        //    uri: url,
+        //    timeout: 5000,
+        //    gzip: false,
+        //    //headers: {
+        //    //    'Access-Control-Allow-Headers':'Content-Type',
+        //    //'Access-Control-Allow-Origin': 'http://localhost/*',
+        //    //    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,HEAD',
+        //        //'Content-Type': 'application/x-rss+xml'
+        //    //}
+        //};
+        //$.get("http://www.fontanka.ru/fontanka.rss", function (data) {
 
-
-        };
+        //    var $xml = $(data);
+        //    var items = [];
+          
+        //    console.log(data);
+        //});
         
-       Parser.parse(httpOptions).then((feed) => {
-            console.log(feed);
-            setState(items=feed);
-        }).catch((err) => {
-            console.log(err);
-            alert("Parsing error");
-        }).finally(() => {
-            console.log('Everything done');
-        });
+       //Parser.parse(url).then((feed) => {
+       //     console.log(feed);
+       //     setState(items=feed);
+       // }).catch((err) => {
+       //     console.log(err);
+       //     alert("Parsing error");
+       // }).finally(() => {
+       //     console.log('Everything done');
+       // });
     }
 
     handleOnClick = event => {
@@ -57,12 +61,12 @@ class Feed extends Component {
         var feeds = this.props.items;
        console.log("feeds " + this.props.items);
         return (
-            <div class="container">
-                <div class="row dark note">
-                    <div class="col-sm-6 other">
+            <div className="container">
+                <div className="row dark note">
+                    <div className="col-sm-6 other">
                         <h4>International news</h4>
                     </div>
-                    <div class="col-sm-6 other2">
+                    <div className="col-sm-6 other2">
                         <div>
                            <Button  type="submit"
                                     className="btn-inverse gdark"

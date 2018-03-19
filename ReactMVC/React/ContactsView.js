@@ -1,4 +1,4 @@
-
+import React from 'react';
   var ContactsView = React.createClass({
   propTypes: {
     contacts: React.PropTypes.array.isRequired,
@@ -24,3 +24,4 @@
     )
   },
 });
+module.exports.ContactsView = ContactsView;

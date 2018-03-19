@@ -1,9 +1,13 @@
 ﻿<html>
 <head>
 
-   @*<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>*@*/
+    <!-- AMJR JS [start] -->
+    <link rel="stylesheet" href="~/RSS/css/style.css" />
+    <link rel="stylesheet" href="~/RSS/css/amjr.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Rss/js/amjr.js"></script>
+    <script type="text/javascript" src="~/Rss/js/amjr-sources.js"></script>
+    <!-- AMJR JS [end] -->
 </head>
 <body>
     <div class="container" id="content">
@@ -13,15 +17,23 @@
             <div id="rss-feeds" class="col-sm-4"></div>
             <div class="col-sm-4">
                 <h3>Even more news</h3>
+        
+                    <!-- AMJR HTML (feeds are loaded here) [start] -->
+                    <ul id="amjr">
+                        <li>Loading...</li>
+                    </ul>
+                    <!-- AMJR HTML (feeds are loaded here) [end] -->
 
-          
-            <div class="clearfix"></div>
-      
-        </div>
-    </div>
-    <!--This tag must be kept at the very bottom of the BODY-->
-    @*@Scripts.Render("~/bundles/react")*@
-        <script src="~/bundle.js"> </script>
+                         <h2>Site content loaded in parallel</h2>
+                        <p>And hence not only at substantiated times, upon well known separate feeding-grounds, could Ahab hope to encounter his prey; but in crossing the widest expanses of water between those grounds he could, by his art, so place and time himself on his way, as even then not to be wholly without prospect of a meeting.</p>
+                        <div class="clearfix"></div>
 
-   </body>
+                    </div>
+                </div>
+                </div>
+                <!--This tag must be kept at the very bottom of the BODY-->
+                @*@Scripts.Render("~/bundles/react")*@
+                <script src="~/bundle.js"> </script>
+             
+</body>
 </html>

@@ -23,7 +23,7 @@ namespace ReactMVC
             bundles.Add(new StyleBundle("~/bundles/css").Include(
                       "~/Content/bootstrap.css", "~/React/style.css",
                       "~/Content/site.css"));
-            bundles.Add(new BabelBundle("~/bundles/react").Include("~/React/bundle.js"));
+            bundles.Add(new BabelBundle("~/bundles/react").Include("~/React/*.js"));
 
         }
     }

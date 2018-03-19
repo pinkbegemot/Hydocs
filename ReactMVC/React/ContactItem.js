@@ -1,3 +1,4 @@
+import React from 'react';
 var ContactItem = React.createClass({
   propTypes: {
     name: React.PropTypes.string.isRequired,
@@ -16,3 +17,4 @@ var ContactItem = React.createClass({
     )
   },
 });
+module.exports = ContactItem;

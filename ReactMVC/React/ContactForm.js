@@ -1,3 +1,4 @@
+import React from 'react';
 var ContactForm = React.createClass({
   propTypes: {
     value: React.PropTypes.object.isRequired,

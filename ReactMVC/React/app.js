@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 //import ContactsView from './ContactsView';
-import Feed from './Feed';
+//import Feed from './Feed';
 var CONTACT_TEMPLATE = { name: "", email: "", description: "", errors: null };
 //var url = "https://www.rt.com/rss/";
 var url = "http://www.fontanka.ru/fontanka.rss"
@@ -27,8 +27,7 @@ export default class App extends Component {
                 <header id="header" className="container">
                 </header>
                 <div className=".container-fluid">
-                 
-                    <Feed url={url}/>
+        
                 </div>
           
             </div>

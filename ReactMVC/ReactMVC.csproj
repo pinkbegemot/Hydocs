@@ -214,6 +214,13 @@
     <Content Include="React\style.css" />
     <Content Include="readme.txt" />
     <Content Include="ReleaseNotes.css" />
+    <Content Include="RSS\css\amjr.css" />
+    <Content Include="RSS\css\style.css" />
+    <Content Include="RSS\images\amjr-loader.gif" />
+    <Content Include="RSS\images\steve_mcqueen.jpg" />
+    <Content Include="RSS\index.html" />
+    <Content Include="RSS\js\amjr-sources.js" />
+    <Content Include="RSS\js\amjr.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
