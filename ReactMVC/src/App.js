@@ -1,9 +1,15 @@
 ﻿import React, { Component } from 'react';
-//import ContactsView from './ContactsView';
-//import Feed from './Feed';
+import ContactsView from './contacts/ContactsView';
+import Feed from './rss/Feed';
 var CONTACT_TEMPLATE = { name: "", email: "", description: "", errors: null };
-//var url = "https://www.rt.com/rss/";
-var url = "http://www.fontanka.ru/fontanka.rss"
+
+let url1 = "http://www.fontanka.ru/fontanka.rss"
+let url2 = "http://feeds.bbci.co.uk/news/rss.xml?edition=int"
+let url3 = "https://www.rt.com/rss/"
+const isProduction = process.env.NODE_ENV === "production";
+const CORS_PROXY =isProduction ? "": "https://cors-anywhere.herokuapp.com/"
+
+export { isProduction };
 
 export default class App extends Component {
     constructor(props) {
@@ -13,23 +19,33 @@ export default class App extends Component {
             ],
             newContact: CONTACT_TEMPLATE}
     }
-    componentDidMount() {
-        //this.authenticate();
-    }
-    //authenticate(e) {
-    //    if (e) e.preventDefault();
-    //    this.store.appState.authenticate();
-    //}
+    //componentDidMount() { }
+
     render() {
         return (
 
-            <div id="appContainer" className=".container-fluid">
-                <header id="header" className="container">
-                </header>
-                <div className=".container-fluid">
-        
+            <div className="container">
+                <div className="row dark note">
+                    <div className="col-sm-4">
+                        <h4>React contacts form</h4>
+                    </div>
+                    <div className="col-sm-8">
+                        <h4>International news - a React RSS feeds component with CORS</h4>
+                             <div className="row">
+                            <div className="col-sm-4">
+                            <Feed url={url1} />
+                        </div>
+                            <div className="col-sm-4">
+                            <Feed url={url2} />
+                        </div>
+                            <div className="col-sm-4">
+                            <Feed url={url3} />
+                            </div>
+
+                        </div>
+                        <div className="clearfix visible-xs"/>
+                    </div>
                 </div>
-          
             </div>
 
         );

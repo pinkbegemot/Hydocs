@@ -1,13 +1,6 @@
 ﻿<html>
 <head>
 
-    <!-- AMJR JS [start] -->
-    <link rel="stylesheet" href="~/RSS/css/style.css" />
-    <link rel="stylesheet" href="~/RSS/css/amjr.css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript" src="~/Rss/js/amjr.js"></script>
-    <script type="text/javascript" src="~/Rss/js/amjr-sources.js"></script>
-    <!-- AMJR JS [end] -->
 </head>
 <body>
     <div class="container" id="content">
@@ -16,23 +9,22 @@
             <div id="react-app" class="col-sm-4"></div>
             <div id="rss-feeds" class="col-sm-4"></div>
             <div class="col-sm-4">
-                <h3>Even more news</h3>
-        
-                    <!-- AMJR HTML (feeds are loaded here) [start] -->
-                    <ul id="amjr">
-                        <li>Loading...</li>
-                    </ul>
-                    <!-- AMJR HTML (feeds are loaded here) [end] -->
-
-                         <h2>Site content loaded in parallel</h2>
-                        <p>And hence not only at substantiated times, upon well known separate feeding-grounds, could Ahab hope to encounter his prey; but in crossing the widest expanses of water between those grounds he could, by his art, so place and time himself on his way, as even then not to be wholly without prospect of a meeting.</p>
-                        <div class="clearfix"></div>
-
+           
+                <div id="mainContainer">
+               
+                        <!-- (feeds are loaded here) [start] -->
+                        <ul id="amjr">
+                            <li>Loading...</li>
+                        </ul>
+                        <!--(feeds are loaded here) [end] -->
                     </div>
+                          
+                    
+                 </div>
                 </div>
                 </div>
                 <!--This tag must be kept at the very bottom of the BODY-->
-                @*@Scripts.Render("~/bundles/react")*@
+                @Scripts.Render("~/bundles/jquery")
                 <script src="~/bundle.js"> </script>
              
 </body>

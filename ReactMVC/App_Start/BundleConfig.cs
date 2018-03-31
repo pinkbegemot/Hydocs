@@ -9,7 +9,7 @@ namespace ReactMVC
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                         "~/Scripts/jquery-{version}.js", "~/Scripts/jqueryRss.js"));
+                         "~/Scripts/jquery-{version}.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
@@ -21,9 +21,9 @@ namespace ReactMVC
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/bundles/css").Include(
-                      "~/Content/bootstrap.css", "~/React/style.css",
+                      "~/Content/bootstrap.css", "~/src/style.css",
                       "~/Content/site.css"));
-            bundles.Add(new BabelBundle("~/bundles/react").Include("~/React/*.js"));
+            bundles.Add(new BabelBundle("~/bundles/react").Include("~/src/*.js"));
 
         }
     }

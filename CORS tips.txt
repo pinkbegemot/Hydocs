@@ -1,0 +1,6 @@
+
+ the value of the Access-Control-Allow-Origin response header must be an exact match for the value of the Origin header in the request.
+
+When responding to a credentialed request, the server must specify an origin in the value of the Access-Control-Allow-Origin header, instead of specifying the "*" wildcard.
+
+The simplest solution is to remove the custom headers you are attempting to send, and the request should no longer get flagged as requiring CORS preflight.

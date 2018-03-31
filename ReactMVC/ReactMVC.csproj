@@ -202,16 +202,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="React\App.js" />
-    <Content Include="React\ContactForm.js" />
-    <Content Include="React\ContactItem.js" />
-    <Content Include="React\ContactsView.js" />
-    <Content Include="React\Feed.js" />
-    <Content Include="React\FeedItem.js" />
-    <Content Include="React\index.js" />
-    <Content Include="React\main.js" />
-    <Content Include="React\polyfills.js" />
-    <Content Include="React\style.css" />
+    <Content Include="src\App.js" />
+    <Content Include="src\contacts\ContactForm.js" />
+    <Content Include="src\contacts\ContactItem.js" />
+    <Content Include="src\contacts\ContactsView.js" />
+    <Content Include="src\index.js" />
+    <Content Include="src\main.js" />
+    <Content Include="src\polyfills.js" />
+    <Content Include="src\rss\Feed.js" />
+    <Content Include="src\rss\FeedItem.js" />
+    <Content Include="src\services\auth\auth.js" />
+    <Content Include="src\services\auth\client.txt" />
+    <Content Include="src\services\auth\index.js" />
+    <Content Include="src\services\auth\type.js" />
+    <Content Include="src\services\axios\client.js" />
+    <Content Include="src\services\index.js" />
+    <Content Include="src\services\utils\getLocationOrigin.js" />
+    <Content Include="src\services\utils\getURL.js" />
+    <Content Include="src\style.css" />
     <Content Include="readme.txt" />
     <Content Include="ReleaseNotes.css" />
     <Content Include="RSS\css\amjr.css" />
@@ -240,7 +248,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -252,7 +262,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_IntRss.cshtml" />
   </ItemGroup>
@@ -292,7 +301,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53938</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/ReactMVC</IISUrl>
+          <IISUrl>http://localhost/rss</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
