@@ -20,7 +20,7 @@ class Feed extends Component {
     };
 
     fetchFeed = (url) => {
-        console.log("before fetching");
+        //console.log("before fetching");
         parser.parseURL(url).then((feed) => {
             console.log(feed.items);
             this.setState({ rssItems: feed.items });
@@ -34,23 +34,21 @@ class Feed extends Component {
 
     handleOnClick = event => {
         this.state.url = this.props.url;
-        //this.props.history.push({ pathname: "/chargepoint" });
-    };
-
+      };
 
     render() {
-
+        var str = this.props.url;
+        var temp = str.split("www");
+       console.log("temp " + temp);
+       var domain = temp[temp.length - 1].slice(1, 25);
+       console.log("domain " + domain);
         var feeds = this.state.rssItems;
-        console.log("feeds " + this.props.items);
+        //console.log("feeds " + this.props.items);
         return (
             <div>
-               
-                        <h4>{this.props.url}</h4>
-             
-                    
+                        <h4>{domain}</h4>
                           {feeds&&Object.keys(feeds).map((k, index) => (
-                                    <FeedItem
-                                        title={feeds[k].title}
+                                    <FeedItem title={feeds[k].title}
                                         link={feeds[k].link}
                                         date={feeds[k].pubDate}
                                     />

@@ -1,23 +1,17 @@
 ﻿import React, { Component } from 'react';
 import ContactsView from './contacts/ContactsView';
 import Feed from './rss/Feed';
-var CONTACT_TEMPLATE = { name: "", email: "", description: "", errors: null };
-
 let url1 = "http://www.fontanka.ru/fontanka.rss"
 let url2 = "http://feeds.bbci.co.uk/news/rss.xml?edition=int"
 let url3 = "https://www.rt.com/rss/"
 const isProduction = process.env.NODE_ENV === "production";
-const CORS_PROXY =isProduction ? "": "https://cors-anywhere.herokuapp.com/"
+const PROXY =isProduction ? "": "https://cors-anywhere.herokuapp.com/"
 
 export { isProduction };
 
 export default class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {contacts: [
-                { key: 1, name: " Martin Fowler", email: "martin@fowler.com", description: "Old friend" },
-            ],
-            newContact: CONTACT_TEMPLATE}
     }
     //componentDidMount() { }
 
@@ -28,18 +22,19 @@ export default class App extends Component {
                 <div className="row dark note">
                     <div className="col-sm-4">
                         <h4>React contacts form</h4>
+                        <ContactsView/>
                     </div>
                     <div className="col-sm-8">
                         <h4>International news - a React RSS feeds component with CORS</h4>
                              <div className="row">
                             <div className="col-sm-4">
-                            <Feed url={url1} />
+                            <Feed url={PROXY+url1} />
                         </div>
                             <div className="col-sm-4">
-                            <Feed url={url2} />
+                            <Feed url={PROXY+url2} />
                         </div>
                             <div className="col-sm-4">
-                            <Feed url={url3} />
+                            <Feed url={PROXY+url3} />
                             </div>
 
                         </div>
