@@ -8,16 +8,16 @@ body {
 
 	/* 100% for iframe to fill screen */
 }
+.magenta {
+
+	color: #ff006e;
+	font-weight:bold;
+}
+
 a {
 	color: grey;
 	text-decoration: none;
 }
-.magenta {
-
-	color: #ff006e;
-}
-
-
 
 a:hover {
 	text-decoration: none;
@@ -75,7 +75,7 @@ body.loaded #frame {
 	width: 100%;
 	-webkit-overflow-scrolling: touch;
 	opacity: 1;
-	//<<--- THIS IS THE KEY
+
 }
 
 

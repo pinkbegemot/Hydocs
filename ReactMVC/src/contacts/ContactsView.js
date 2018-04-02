@@ -27,7 +27,7 @@ class ContactsView  extends Component{
         var conts = this.state.contacts;
         return (
             <div className="ContactView">
-                <h1 className='ContactView-title'> My React Contacts</h1>
+                <h3 className='ContactView-title'> My React contacts</h3>
                 <ul className='ContactView-list'>
                     {conts && Object.keys(conts).map((k, index) => (
                         <ContactItem contact={conts[k]}
@@ -35,12 +35,40 @@ class ContactsView  extends Component{
                     ))}
                 </ul>
                 <ContactForm value={this.state.newContact}
-                    onChange={this.state.onNewContactChange}
-                    onSubmit={this.state.onNewContactSubmit} />
+                    onChange={this.updateNewContact}
+                    onSubmit={this.submitNewContact} />
             </div>
         )
     }
-      
+  
+    updateNewContact = (contact) => {
+         this.setState({ newContact: contact });
+    }
+
+
+    submitNewContact = () => {
+        var contact = Object.assign({}, this.state.newContact, { key: this.state.contacts.length + 1, errors: {} });
+        if (!contact.name) {
+            contact.errors.name = ["A contact without a name?"];
+        
+        }
+        if (!/.+@.+\..+/.test(contact.email)) {
+            contact.errors.email = ["Please enter a valid email address"]
+     
+        }
+        this.setState(
+           
+        Object.keys(contact.errors).length === 0
+                ? {
+                    newContact: CONTACT_TEMPLATE,
+                    contacts: this.state.contacts.concat(contact),
+                }
+                : { newContact: contact }
+        );
+
+     
+    }
+   
    
 }
 export default ContactsView;

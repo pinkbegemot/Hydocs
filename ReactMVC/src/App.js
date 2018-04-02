@@ -19,15 +19,21 @@ export default class App extends Component {
         return (
 
             <div className="container">
+                <h2>React JS: Contacts Form and RSS Parser with CORS</h2>
+                <div className="v-space-25" />
                 <div className="row dark note">
+                
                     <div className="col-sm-4">
-                        <h4>React contacts form</h4>
-                        <ContactsView/>
+                         <p> <a href="https://github.com/pinkbegemot/React" target="blank">Code on Github</a></p>
+
+                         <div className="v-space-25" /><ContactsView />
                     </div>
                     <div className="col-sm-8">
-                        <h4>International news - a React RSS feeds component with CORS</h4>
-                             <div className="row">
+                           <p> <a href="https://github.com/pinkbegemot/React" target="blank">Code on Github</a></p>
+                           <div className="v-space-25" />
+                        <div className="row">
                             <div className="col-sm-4">
+                                <h3 className='ContactView-title'>International news</h3>
                             <Feed url={PROXY+url1} />
                         </div>
                             <div className="col-sm-4">
@@ -50,36 +56,10 @@ export default class App extends Component {
  */
 
 
-updateNewContact = (contact) => {
-    setState({ newContact: contact });
-}
+
+   
 
 
-submitNewContact = () => {
-    var contact = Object.assign({}, state.newContact, { key: state.contacts.length + 1, errors: {} });
-
-    if (!contact.name) {
-        contact.errors.name = ["Please enter your new contact's name"]
-    }
-    if (!/.+@.+\..+/.test(contact.email)) {
-        contact.errors.email = ["Please enter your new contact's email"]
-    }
-
-    setState(
-        Object.keys(contact.errors).length === 0
-            ? {
-                newContact: Object.assign({}, CONTACT_TEMPLATE),
-                contacts: state.contacts.slice(0).concat(contact),
-
-            }
-            : { newContact: contact }
-    )
-    var div = $(".ContactView-title");
-    $(div).fadeOut();
-
-    $(div).fadeIn(2500, "linear", null);
-
-}
 Display=(el)=>{
 
     el.style.display = "block" ? el.style.display = "none" : el.style.display = "block";

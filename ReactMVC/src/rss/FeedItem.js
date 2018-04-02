@@ -1,7 +1,4 @@
 ﻿import React, { Component } from 'react';
-//import GreyLayout from '../../layouts/GreyLayout.jsx';
-//import { Button } from 'react-bootstrap';
-
 
 class FeedItem extends Component {
 
@@ -11,8 +8,7 @@ class FeedItem extends Component {
     }
 
     formatDate = (s_date) => {
-        
-        return new Date(s_date).toLocaleDateString('en-UK');
+        return new Date(s_date).toLocaleTimeString('en-UK');
 
     }
        render() {
@@ -24,7 +20,7 @@ class FeedItem extends Component {
             title.length > 0 ?
                  <div className="row">
                             <p>{title} </p>
-                            <p> {date}<a href={link} class="magenta" target="_blank"><b>>>>>></b> </a> </p>
+                            <p> {date} <a href={link} className="magenta" target="_blank"><b> >>>>></b> </a> </p>
                             <div class="v-space-20" />
                     </div>
                 : null

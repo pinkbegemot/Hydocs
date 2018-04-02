@@ -61,6 +61,9 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('content'));
+	var div = $(".ContactView-title");
+	$(div).fadeOut();
+	$(div).fadeIn(3500, "linear", null);
 
 /***/ },
 /* 1 */
@@ -21177,31 +21180,6 @@
 
 	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-	        _this.updateNewContact = function (contact) {
-	            setState({ newContact: contact });
-	        };
-
-	        _this.submitNewContact = function () {
-	            var contact = Object.assign({}, state.newContact, { key: state.contacts.length + 1, errors: {} });
-
-	            if (!contact.name) {
-	                contact.errors.name = ["Please enter your new contact's name"];
-	            }
-	            if (!/.+@.+\..+/.test(contact.email)) {
-	                contact.errors.email = ["Please enter your new contact's email"];
-	            }
-
-	            setState(Object.keys(contact.errors).length === 0 ? {
-	                newContact: Object.assign({}, CONTACT_TEMPLATE),
-	                contacts: state.contacts.slice(0).concat(contact)
-
-	            } : { newContact: contact });
-	            var div = $(".ContactView-title");
-	            $(div).fadeOut();
-
-	            $(div).fadeIn(2500, "linear", null);
-	        };
-
 	        _this.Display = function (el) {
 
 	            el.style.display = "block" ? el.style.display = "none" : el.style.display = "block";
@@ -21220,32 +21198,55 @@
 	                'div',
 	                { className: 'container' },
 	                _react2.default.createElement(
+	                    'h2',
+	                    null,
+	                    'React JS: Contacts Form and RSS Parser with CORS'
+	                ),
+	                _react2.default.createElement('div', { className: 'v-space-25' }),
+	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'row dark note' },
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'col-sm-4' },
 	                        _react2.default.createElement(
-	                            'h4',
+	                            'p',
 	                            null,
-	                            'React contacts form'
+	                            ' ',
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: 'https://github.com/pinkbegemot/React', target: 'blank' },
+	                                'Code on Github'
+	                            )
 	                        ),
+	                        _react2.default.createElement('div', { className: 'v-space-25' }),
 	                        _react2.default.createElement(_ContactsView2.default, null)
 	                    ),
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'col-sm-8' },
 	                        _react2.default.createElement(
-	                            'h4',
+	                            'p',
 	                            null,
-	                            'International news - a React RSS feeds component with CORS'
+	                            ' ',
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: 'https://github.com/pinkbegemot/React', target: 'blank' },
+	                                'Code on Github'
+	                            )
 	                        ),
+	                        _react2.default.createElement('div', { className: 'v-space-25' }),
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: 'row' },
 	                            _react2.default.createElement(
 	                                'div',
 	                                { className: 'col-sm-4' },
+	                                _react2.default.createElement(
+	                                    'h3',
+	                                    { className: 'ContactView-title' },
+	                                    'International news'
+	                                ),
 	                                _react2.default.createElement(_Feed2.default, { url: PROXY + url1 })
 	                            ),
 	                            _react2.default.createElement(
@@ -21318,6 +21319,24 @@
 
 	        var _this = _possibleConstructorReturn(this, (ContactsView.__proto__ || Object.getPrototypeOf(ContactsView)).call(this, props));
 
+	        _this.updateNewContact = function (contact) {
+	            _this.setState({ newContact: contact });
+	        };
+
+	        _this.submitNewContact = function () {
+	            var contact = Object.assign({}, _this.state.newContact, { key: _this.state.contacts.length + 1, errors: {} });
+	            if (!contact.name) {
+	                contact.errors.name = ["A contact without a name?"];
+	            }
+	            if (!/.+@.+\..+/.test(contact.email)) {
+	                contact.errors.email = ["Please enter a valid email address"];
+	            }
+	            _this.setState(Object.keys(contact.errors).length === 0 ? {
+	                newContact: CONTACT_TEMPLATE,
+	                contacts: _this.state.contacts.concat(contact)
+	            } : { newContact: contact });
+	        };
+
 	        _this.state = {
 	            contacts: [{ key: 1, name: " Martin Fowler", email: "martin@fowler.com", description: "Old friend" }],
 	            newContact: CONTACT_TEMPLATE
@@ -21333,7 +21352,7 @@
 	                "div",
 	                { className: "ContactView" },
 	                _react2.default.createElement(
-	                    "h1",
+	                    "h3",
 	                    { className: "ContactView-title" },
 	                    " My React Contacts"
 	                ),
@@ -21346,8 +21365,8 @@
 	                    })
 	                ),
 	                _react2.default.createElement(_ContactForm2.default, { value: this.state.newContact,
-	                    onChange: this.state.onNewContactChange,
-	                    onSubmit: this.state.onNewContactSubmit })
+	                    onChange: this.updateNewContact,
+	                    onSubmit: this.submitNewContact })
 	            );
 	        }
 	    }]);
@@ -21382,6 +21401,7 @@
 	    value: _react2.default.PropTypes.object.isRequired,
 	    onChange: _react2.default.PropTypes.func.isRequired,
 	    onSubmit: _react2.default.PropTypes.func.isRequired
+
 	  },
 
 	  onNameInput: function onNameInput(e) {
@@ -21402,8 +21422,7 @@
 	  },
 
 	  render: function render() {
-	    var errors = this.props.value.errors ? this.props.value.errors : {};
-
+	    var errors = this.props.value.errors || {};
 	    return _react2.default.createElement('form', { onSubmit: this.onSubmit, className: 'ContactForm', noValidate: true }, _react2.default.createElement('input', {
 	      type: 'text',
 	      className: errors.name && 'ContactForm-error',
@@ -21449,7 +21468,7 @@
 	  },
 
 	  render: function render() {
-	    return _react2.default.createElement('div', { className: 'ContactItem' }, _react2.default.createElement('div', { className: 'ContactItem-name' }, this.props.name), _react2.default.createElement('div', { className: 'ContactItem-email' }, this.props.email), _react2.default.createElement('div', { className: 'ContactItem-description' }, this.props.description));
+	    return _react2.default.createElement('div', { className: 'ContactItem' }, _react2.default.createElement('div', { className: 'ContactItem-name' }, this.props.contact.name), _react2.default.createElement('div', { className: 'ContactItem-email' }, this.props.contact.email), _react2.default.createElement('div', { className: 'ContactItem-description' }, this.props.contact.description));
 	  }
 	});
 	module.exports = ContactItem;
@@ -21488,7 +21507,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	//var client = require('./services/axios/client');
 	var Parser = __webpack_require__(451);
 	var parser = new Parser();
 
@@ -21501,13 +21519,11 @@
 	        var _this = _possibleConstructorReturn(this, (Feed.__proto__ || Object.getPrototypeOf(Feed)).call(this, props));
 
 	        _this.fetchFeed = function (url) {
-	            //console.log("before fetching");
 	            parser.parseURL(url).then(function (feed) {
-	                console.log(feed.items);
 	                _this.setState({ rssItems: feed.items });
 	            }).catch(function (err) {
 	                console.log(err);
-	                alert("Parsing error");
+	                alert("RSS parsing error");
 	            }).finally(function () {
 	                console.log('Everything done');
 	            });
@@ -21515,6 +21531,17 @@
 
 	        _this.handleOnClick = function (event) {
 	            _this.state.url = _this.props.url;
+	        };
+
+	        _this.trimUrl = function (str) {
+	            var temp = str.split("//");
+	            var token = temp[temp.length - 1];
+	            console.log("last token " + token);
+	            var temp = token.split("rss")[0];
+	            //now remove the last char ('/' or '.')
+	            var domain = temp.slice(0, temp.length - 1);
+	            console.log("domain " + domain);
+	            return domain;
 	        };
 
 	        _this.state = { rssItems: null };
@@ -21525,21 +21552,17 @@
 	    _createClass(Feed, [{
 	        key: "render",
 	        value: function render() {
-	            var str = this.props.url;
-	            var temp = str.split("www");
-	            console.log("temp " + temp);
-	            var domain = temp[temp.length - 1].slice(1, 25);
-	            console.log("domain " + domain);
+	            var source = this.trimUrl(this.props.url);
 	            var feeds = this.state.rssItems;
-	            //console.log("feeds " + this.props.items);
 	            return _react2.default.createElement(
 	                "div",
-	                null,
+	                { className: "container" },
 	                _react2.default.createElement(
-	                    "h4",
-	                    null,
-	                    domain
+	                    "p",
+	                    { className: "ContactItem-email" },
+	                    source
 	                ),
+	                !feeds && _react2.default.createElement("div", { className: "vCentre fa fa-spinner fa-pulse fa-fw" }),
 	                feeds && Object.keys(feeds).map(function (k, index) {
 	                    return _react2.default.createElement(_FeedItem2.default, { title: feeds[k].title,
 	                        link: feeds[k].link,
@@ -43366,10 +43389,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	//import GreyLayout from '../../layouts/GreyLayout.jsx';
-	//import { Button } from 'react-bootstrap';
-
-
 	var FeedItem = function (_Component) {
 	    _inherits(FeedItem, _Component);
 
@@ -43379,8 +43398,7 @@
 	        var _this = _possibleConstructorReturn(this, (FeedItem.__proto__ || Object.getPrototypeOf(FeedItem)).call(this, props));
 
 	        _this.formatDate = function (s_date) {
-
-	            return new Date(s_date).toLocaleDateString('en-UK');
+	            return new Date(s_date).toLocaleTimeString('en-UK');
 	        };
 
 	        _this.state = { title: "", link: "", date: "" };
@@ -43408,13 +43426,14 @@
 	                    null,
 	                    " ",
 	                    date,
+	                    " ",
 	                    _react2.default.createElement(
 	                        "a",
-	                        { href: link, "class": "magenta", target: "_blank" },
+	                        { href: link, className: "magenta", target: "_blank" },
 	                        _react2.default.createElement(
 	                            "b",
 	                            null,
-	                            ">>>>>"
+	                            " >>>>>"
 	                        ),
 	                        " "
 	                    ),
