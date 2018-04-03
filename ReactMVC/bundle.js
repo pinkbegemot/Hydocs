@@ -60,6 +60,11 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//import '../style/style.css';
+	//import '../style/bootstrap.min.css';
+	//window.jQuery = window.$ = require('../Scripts/jquery-1.10.2');
+	//require('../Scripts/bootstrap');
+
 	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('content'));
 	var div = $(".ContactView-title");
 	$(div).fadeOut();
@@ -21198,55 +21203,53 @@
 	                'div',
 	                { className: 'container' },
 	                _react2.default.createElement(
-	                    'h2',
-	                    null,
-	                    'React JS: Contacts Form and RSS Parser with CORS'
+	                    'div',
+	                    { className: 'imagediv' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'title' },
+	                        _react2.default.createElement(
+	                            'h1',
+	                            null,
+	                            'React JS: Contacts Form and RSS Parser with CORS'
+	                        ),
+	                        _react2.default.createElement('div', { className: 'v-space-25' }),
+	                        _react2.default.createElement(
+	                            'div',
+	                            null,
+	                            ' ',
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: 'https://github.com/pinkbegemot/React', target: 'blank' },
+	                                'Code on Github'
+	                            )
+	                        )
+	                    )
 	                ),
-	                _react2.default.createElement('div', { className: 'v-space-25' }),
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'row dark note' },
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'col-sm-4' },
-	                        _react2.default.createElement(
-	                            'p',
-	                            null,
-	                            ' ',
-	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'https://github.com/pinkbegemot/React', target: 'blank' },
-	                                'Code on Github'
-	                            )
-	                        ),
 	                        _react2.default.createElement('div', { className: 'v-space-25' }),
 	                        _react2.default.createElement(_ContactsView2.default, null)
 	                    ),
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: 'col-sm-8' },
-	                        _react2.default.createElement(
-	                            'p',
-	                            null,
-	                            ' ',
-	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'https://github.com/pinkbegemot/React', target: 'blank' },
-	                                'Code on Github'
-	                            )
-	                        ),
+	                        { className: 'col-sm-8 border border-secondary' },
 	                        _react2.default.createElement('div', { className: 'v-space-25' }),
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: 'row' },
 	                            _react2.default.createElement(
+	                                'h3',
+	                                { className: 'ContactView-title' },
+	                                ' International news'
+	                            ),
+	                            _react2.default.createElement(
 	                                'div',
 	                                { className: 'col-sm-4' },
-	                                _react2.default.createElement(
-	                                    'h3',
-	                                    { className: 'ContactView-title' },
-	                                    'International news'
-	                                ),
 	                                _react2.default.createElement(_Feed2.default, { url: PROXY + url1 })
 	                            ),
 	                            _react2.default.createElement(
@@ -21350,11 +21353,11 @@
 	            var conts = this.state.contacts;
 	            return _react2.default.createElement(
 	                "div",
-	                { className: "ContactView" },
+	                { className: "ContactView outline" },
 	                _react2.default.createElement(
 	                    "h3",
 	                    { className: "ContactView-title" },
-	                    " My React Contacts"
+	                    " My contacts"
 	                ),
 	                _react2.default.createElement(
 	                    "ul",
@@ -21536,11 +21539,10 @@
 	        _this.trimUrl = function (str) {
 	            var temp = str.split("//");
 	            var token = temp[temp.length - 1];
-	            console.log("last token " + token);
 	            var temp = token.split("rss")[0];
 	            //now remove the last char ('/' or '.')
 	            var domain = temp.slice(0, temp.length - 1);
-	            console.log("domain " + domain);
+	            //console.log("domain " + domain);
 	            return domain;
 	        };
 
@@ -43425,17 +43427,11 @@
 	                    "p",
 	                    null,
 	                    " ",
-	                    date,
-	                    " ",
 	                    _react2.default.createElement(
 	                        "a",
 	                        { href: link, className: "magenta", target: "_blank" },
-	                        _react2.default.createElement(
-	                            "b",
-	                            null,
-	                            " >>>>>"
-	                        ),
-	                        " "
+	                        date,
+	                        "  >>>> "
 	                    ),
 	                    " "
 	                ),

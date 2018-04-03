@@ -20,7 +20,7 @@ class FeedItem extends Component {
             title.length > 0 ?
                  <div className="row">
                             <p>{title} </p>
-                            <p> {date} <a href={link} className="magenta" target="_blank"><b> >>>>></b> </a> </p>
+                            <p> <a href={link} className="magenta" target="_blank">{date}  >>>> </a> </p>
                             <div class="v-space-20" />
                     </div>
                 : null

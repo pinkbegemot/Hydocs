@@ -36,11 +36,10 @@ class Feed extends Component {
     trimUrl = (str) => {
         var temp = str.split("//");
         var token = temp[temp.length - 1];
-        console.log("last token " + token);
         var temp = token.split("rss")[0];
         //now remove the last char ('/' or '.')
         var domain = temp.slice(0, temp.length - 1);
-        console.log("domain " + domain);
+        //console.log("domain " + domain);
         return domain;
     }
     render() {

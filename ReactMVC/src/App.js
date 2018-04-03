@@ -19,21 +19,25 @@ export default class App extends Component {
         return (
 
             <div className="container">
-                <h2>React JS: Contacts Form and RSS Parser with CORS</h2>
-                <div className="v-space-25" />
+                <div className="imagediv">
+                    <div className="title">
+                        <h1>React JS: Contacts Form and RSS Parser with CORS</h1>
+                        <div className="v-space-25"/>
+                            <div> <a href="https://github.com/pinkbegemot/React" target="blank">Code on Github</a></div>
+                    </div>
+
+                </div>
                 <div className="row dark note">
                 
                     <div className="col-sm-4">
-                         <p> <a href="https://github.com/pinkbegemot/React" target="blank">Code on Github</a></p>
-
-                         <div className="v-space-25" /><ContactsView />
+                     <div className="v-space-25" /><ContactsView />
                     </div>
-                    <div className="col-sm-8">
-                           <p> <a href="https://github.com/pinkbegemot/React" target="blank">Code on Github</a></p>
+                    <div className="col-sm-8 border border-secondary">
+                         
                            <div className="v-space-25" />
-                        <div className="row">
+                           <div className="row">
+                            <h3 className='ContactView-title'> International news</h3>
                             <div className="col-sm-4">
-                                <h3 className='ContactView-title'>International news</h3>
                             <Feed url={PROXY+url1} />
                         </div>
                             <div className="col-sm-4">

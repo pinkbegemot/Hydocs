@@ -26,8 +26,8 @@ class ContactsView  extends Component{
     render() {
         var conts = this.state.contacts;
         return (
-            <div className="ContactView">
-                <h3 className='ContactView-title'> My React contacts</h3>
+            <div className="ContactView outline">
+                <h3 className='ContactView-title'> My contacts</h3>
                 <ul className='ContactView-list'>
                     {conts && Object.keys(conts).map((k, index) => (
                         <ContactItem contact={conts[k]}

@@ -11,18 +11,17 @@ namespace ReactMVC
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                          "~/Scripts/jquery-{version}.js"));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+            //// Use the development version of Modernizr to develop with and learn from. Then, when you're
+            //// ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
+            //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
+            //            "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/bundles/css").Include(
-                      "~/Content/bootstrap.css", "~/src/style.css",
-                      "~/Content/site.css"));
+                      "~/Style/bootstrap.css", "~/Style/style.css"));
             bundles.Add(new BabelBundle("~/bundles/react").Include("~/src/*.js"));
 
         }
